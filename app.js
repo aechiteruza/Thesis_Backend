@@ -10,13 +10,13 @@ var usersRouter = require('./routes/users');
 var auth = require('./routes/auth');
 
 var createdbRouter = require('./routes/createdb');
-var authdb = require('./routes/authdb');
+//var authdb = require('./routes/authdb');
 
 var namereddRouter = require('./routes/nameredd');
-var authred = require('./routes/authred');
+//var authred = require('./routes/authred');
 
 var namemqtttRouter = require('./routes/namemqttt');
-var authmqtt = require('./routes/authmqtt');
+//var authmqtt = require('./routes/authmqtt');
 
 var namesparkRouter = require('./routes/namespark');
 
@@ -41,11 +41,11 @@ app.use(cookieParser());
 app.use('/users', usersRouter);
 
 app.use('/auth', auth);
-app.use('/authdb', authdb);
+//app.use('/authdb', authdb);
 app.use('/createdb',createdbRouter);
-app.use('/authred', authred);
+//app.use('/authred', authred);
 app.use('/nameredd',namereddRouter);
-app.use('/authmqtt', authmqtt);
+//app.use('/authmqtt', authmqtt);
 app.use('/namemqttt',namemqtttRouter);
 app.use('/namespark',namesparkRouter);
 

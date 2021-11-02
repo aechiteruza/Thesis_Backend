@@ -11,7 +11,7 @@ var db = require('../db/index');
     gen token
 */
 router.post('/login', (req, res, next) => {
-    //console.log(req.body);
+    console.log(req.body);
     const { username, password } = req.body.userData;
     if (username === undefined || password === undefined) {
         res.status(401).json({

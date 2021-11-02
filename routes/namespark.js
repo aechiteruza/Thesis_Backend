@@ -5,7 +5,7 @@ var jwt = require('jsonwebtoken');
 const config = require('../config');
 var bcrypt = require('bcrypt-nodejs');
 var Docker = require('dockerode');
-var dockerHostIP = "192.168.56.104"
+var dockerHostIP = "192.168.56.103"
 
 
 const handleToken = (req, res, next) => {
@@ -26,7 +26,6 @@ const handleToken = (req, res, next) => {
 }
 
 
-/* GET users listing. */
 router.post('/register', (req, res, next) => {
   const { username, namespark,passwordspark, packages, filename } = req.body.userData;
   var namecon = username.concat(namespark)
@@ -66,18 +65,19 @@ router.post('/register', (req, res, next) => {
     if (!err) {
       res.json({
         success: true,
-        message: "User Registered.",
+        message: "Container Registered.",
         data: result
       });
     } else {
       res.json({
         success: false,
-        message: "User not Registered.",
+        message: "Container not Registered.",
         data: result
       });
     }
 
   }
+  
   db.register(dataToInsert, handler);
 });
 
@@ -86,6 +86,7 @@ router.post('/listusers', (req, res, next) => {
   const handler = (err, result) => {
     if (!err && result !== null) {
       result.toArray((err, users) => {
+        console.log(result.namespark)
         if (!err) {
           res.json({
             success: true,
