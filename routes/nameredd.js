@@ -64,7 +64,6 @@ router.post('/register', (req, res, next) => {
 
   }
   db.register(dataToInsert, handler);
-  console.log("after import");
   var fs = require('fs')
   fs.readFile('noderedtemplate/template.js', "utf8", function (err, data) {
     if (err) {
